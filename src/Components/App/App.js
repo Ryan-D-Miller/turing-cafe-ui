@@ -28,12 +28,16 @@ class App extends Component {
     }
   }
 
+  addReservation = (newReservation) => {
+    console.log(newReservation);
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form />
+          <Form addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
           <Dashboard displayReservations={this.displayReservations}/>
