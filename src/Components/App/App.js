@@ -23,7 +23,7 @@ class App extends Component {
   displayReservations=() => {
     if(this.state.reservations) {
       return this.state.reservations.map(r => {
-        return <ResCard reservation={r} key={r.id}/>
+        return <ResCard reservation={r} key={r.id} deleteRes={this.deleteRes}/>
       })
     }
   }
@@ -36,7 +36,11 @@ class App extends Component {
       .catch((error) => {
         console.log('ERRoR: ', error)
       })
-    
+  }
+
+  deleteRes = (id) => {
+    const filteredRes = this.state.reservations.filter(res => res.id != id);
+    console.log(id);
 
   }
 
