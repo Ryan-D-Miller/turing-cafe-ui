@@ -26,7 +26,23 @@ const addReservation = (newRes) => {
         })
 }
 
+const deleteReservation = (id) => {
+    return fetch(`${reservations}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(res => {
+        if (res.ok) {
+            return res.json()
+        }
+        throw new Error(res)
+    })
+}
+
 export {
     getReservations,
-    addReservation
+    addReservation,
+    deleteReservation
 }

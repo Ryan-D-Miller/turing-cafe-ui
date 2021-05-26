@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {getReservations, addReservation} from '../../apiCalls';
+import {getReservations, addReservation, deleteReservation} from '../../apiCalls';
 import Dashboard from '../Dashboard/Dashboard';
 import ResCard from '../ResCard/ResCard';
 import Form from '../Form/Form';
@@ -39,9 +39,11 @@ class App extends Component {
   }
 
   deleteRes = (id) => {
-    const filteredRes = this.state.reservations.filter(res => res.id != id);
-    console.log(id);
-
+    deleteReservation(id)
+      .then((data) => {
+        this.setState({ reservations: data })
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
