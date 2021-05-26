@@ -23,7 +23,7 @@ class App extends Component {
   displayReservations=() => {
     if(this.state.reservations) {
       return this.state.reservations.map(r => {
-        return <ResCard reservation={r}/>
+        return <ResCard reservation={r} key={r.id}/>
       })
     }
   }
