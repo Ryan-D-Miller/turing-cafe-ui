@@ -5,7 +5,7 @@ import './Dashboard.css';
 export default function Dashboard({displayReservations}) {
     const reservations = displayReservations();
     return (
-        <section>
+        <section className="dashboard">
             {reservations}
         </section>
     )
