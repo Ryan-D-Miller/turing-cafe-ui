@@ -9,3 +9,7 @@ const getReservations = () => {
             throw new Error(res)
         })
 }
+
+export {
+    getReservations
+}
