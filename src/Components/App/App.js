@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {getReservations} from '../../apiCalls';
 import Dashboard from '../Dashboard/Dashboard';
+import ResCard from '../ResCard/ResCard';
 
 class App extends Component {
   constructor() {
@@ -18,6 +19,14 @@ class App extends Component {
       })
   }
 
+  displayReservations=() => {
+    if(this.state.reservations) {
+      return this.state.reservations.map(r => {
+        return <ResCard reservation={r}/>
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -26,7 +35,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          <Dashboard />
+          <Dashboard displayReservations={this.displayReservations}/>
         </div>
       </div>
     )

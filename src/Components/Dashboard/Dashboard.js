@@ -1,6 +1,6 @@
 import React from 'react';
-import '.Dashboard.css';
-import ResCard from '../ResCard/ResCard';
+import './Dashboard.css';
+
 
 export default function Dashboard({displayReservations}) {
     const reservations = displayReservations();
