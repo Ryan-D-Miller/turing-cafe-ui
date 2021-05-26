@@ -3,6 +3,7 @@ import './App.css';
 import {getReservations} from '../../apiCalls';
 import Dashboard from '../Dashboard/Dashboard';
 import ResCard from '../ResCard/ResCard';
+import Form from '../Form/Form';
 
 class App extends Component {
   constructor() {
@@ -32,7 +33,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+          <Form />
         </div>
         <div className='resy-container'>
           <Dashboard displayReservations={this.displayReservations}/>
