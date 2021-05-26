@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {getReservations} from '../../apiCalls';
-import ResCard from '../ResCard/ResCard'
+import Dashboard from '../Dashboard/Dashboard';
 
 class App extends Component {
   constructor() {
@@ -26,7 +26,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          <Dashboard />
         </div>
       </div>
     )
