@@ -5,3 +5,9 @@
     border-radius: 10px;
     color: #028080;
 }
+
+.button {
+    padding: 5px 55px;
+    background-color: #028080;
+    color: white;
+}
