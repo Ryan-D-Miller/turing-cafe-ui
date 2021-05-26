@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {getReservations} from '../../apiCalls';
+import {getReservations, addReservation} from '../../apiCalls';
 import Dashboard from '../Dashboard/Dashboard';
 import ResCard from '../ResCard/ResCard';
 import Form from '../Form/Form';
@@ -29,7 +29,15 @@ class App extends Component {
   }
 
   addReservation = (newReservation) => {
-    this.setState( { reservations: [...this.state.reservations, newReservation]})
+    addReservation(newReservation)
+      .then(data => {
+        this.setState({ reservations: [...this.state.reservations, newReservation] })
+      })
+      .catch((error) => {
+        console.log('ERRoR: ', error)
+      })
+    
+
   }
 
   render() {
